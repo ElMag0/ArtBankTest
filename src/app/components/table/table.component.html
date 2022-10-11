@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="add-user-button">
+    <button class="add-user-button" role="button" (click)="addUser()">
+      ADD USER
+    </button>
+  </div>
+  <ul class="responsive-table">
+    <li class="table-header">
+      <div class="col col-1">Id</div>
+      <div class="col col-2">Name</div>
+      <div class="col col-3">Username</div>
+      <div class="col col-3">Email</div>
+      <div class="col col-4">Phone</div>
+    </li>
+
+    <li class="table-row" *ngFor="let user of users">
+      <div class="col col-1" data-label="Job Id">{{ user.id }}</div>
+      <div class="col col-2" data-label="Name">{{ user.name }}</div>
+      <div class="col col-3" data-label="Username">{{ user.username }}</div>
+      <div class="col col-3" data-label="Email">{{ user.email }}</div>
+      <div class="col col-4" data-label="Phone">{{ user.phone }}</div>
+      <div class="col col-5" data-label="Delete">
+        <img
+          (click)="deleteUser(user.id)"
+          src="https://img.icons8.com/cotton/30/000000/delete-sign--v1.png"
+        />
+      </div>
+    </li>
+  </ul>
+</div>

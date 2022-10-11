@@ -1,0 +1,63 @@
+<mat-dialog-content>
+  <h1 mat-dialog-title>
+    {{ dialogTitle }}
+  </h1>
+
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+
+    <input
+      #inputTitle
+      matInput
+      [(ngModel)]="name"
+      (keydown.enter)="onConfirm()"
+    />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Username</mat-label>
+
+    <input
+      #inputTitle
+      matInput
+      [(ngModel)]="username"
+      (keydown.enter)="onConfirm()"
+    />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+
+    <input
+      #inputTitle
+      matInput
+      [(ngModel)]="email"
+      (keydown.enter)="onConfirm()"
+    />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Phone</mat-label>
+
+    <input
+      #inputTitle
+      matInput
+      [(ngModel)]="phone"
+      (keydown.enter)="onConfirm()"
+    />
+  </mat-form-field>
+</mat-dialog-content>
+
+<div mat-dialog-actions>
+  <button
+    mat-raised-button
+    color="primary"
+    disabled
+    (click)="onConfirm()"
+    [disabled]="inputTitle.value.length === 0"
+  >
+    Save
+  </button>
+
+  <button mat-raised-button color="warn" (click)="onCancel()">Cancel</button>
+</div>
